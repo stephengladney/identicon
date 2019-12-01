@@ -34,7 +34,7 @@ defmodule Identicon do
   end
 
   def mirror_row([first, second | _third] = row) do
-    Enum.concat(row, [second, first])
+    row ++ [second, first]
   end
 
   def hash_input(input) do
