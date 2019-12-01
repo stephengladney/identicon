@@ -30,8 +30,11 @@ defmodule Identicon do
   end
 
   def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
-     
     %Identicon.Image{image | color: {r, g, b}}
+  end
+
+  def mirror_row([first, second | _third] = row) do
+    Enum.concat(row, [second, first])
   end
 
   def hash_input(input) do
